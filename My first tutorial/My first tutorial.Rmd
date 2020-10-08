@@ -76,7 +76,7 @@ We can add a hidden solution button to the exercise chunk.
   
 We can give hints for code execution:  
   
-*Now calculate three two the power of five:*  
+*Now calculate three to the power of five:*  
   
 ```{r power, exercise=TRUE}
 
@@ -120,7 +120,7 @@ c(1:2) + c(3:6)
 ### Preset code 
   
 
-We can already set up some code in the chunks as well, and the user just needs to finnish or modify it.  
+We can already set up some code in the chunks as well, and the user just needs to finish or modify it.  
 
 *Modify the following code to limit the number of rows printed to 5 of the 'mtcars' data set:*  
 
@@ -144,9 +144,9 @@ head(mtcars, n = 5)
   
 ### Quiz
 
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+We can include multiple choice questions and quizzes. 
 
-Some questions to verify that you understand the purposes of various base and recommended R packages:
+*Answer the following questions to successfully finish the tutorial:*
 
 ```{r quiz, echo=FALSE}
 quiz(
