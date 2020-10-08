@@ -2,13 +2,10 @@
 title: "Tutorial"
 output: learnr::tutorial
 runtime: shiny_prerendered
-description: "Introduce interactive tutorials"
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
-library(gradethis)
-tutorial_options(exercise.checker = "gradethis::grade_learnr()")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -143,26 +140,7 @@ head(mtcars, n = 5)
 ``` 
   
   
-### Evaluating exercise  
-  
-Using the `gradethis` package, we can directly evaluate code entered in the code chunks.  
-  
-
-* Submit `1+1` to receive a correct grade.
-
-```{r addsimple, exercise = TRUE}
-
-```
- 
-```{r addsimple-check}
-grade_result(
-  pass_if(~identical(.result, 2))
-)
-```
-
-
-
-## Topic 2
+## Quizzes
   
 ### Quiz
 
@@ -170,19 +148,19 @@ grade_result(
 
 Some questions to verify that you understand the purposes of various base and recommended R packages:
 
-```{r quiz}
+```{r quiz, echo=FALSE}
 quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
+  question("Should you use pie charts in scientific publications?",
+    answer("never", correct = TRUE),
+    answer("sometimes"),
+    answer("never but in bold", correct = TRUE),
+    answer("yes")
   ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+  question("How did you like this tutorial? Note that there is only one correct answer",
+    answer("meeh"),
+    answer("good"),
+    answer("great"),
+    answer("awesome!", correct = TRUE)
   )
 )
 ```

@@ -1,0 +1,12 @@
+name: Tutorial
+title: Tutorial
+username:
+account: ischi94
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2969390
+bundleId: 3716222
+url: https://ischi94.shinyapps.io/Tutorial/
+when: 1602145999.05303
+asMultiple: FALSE
+asStatic: FALSE
