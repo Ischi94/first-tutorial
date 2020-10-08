@@ -2,10 +2,13 @@
 title: "Tutorial"
 output: learnr::tutorial
 runtime: shiny_prerendered
+description: "Introduce interactive tutorials"
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker = "gradethis::grade_learnr()")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -46,7 +49,7 @@ The greatest advantage of an interactive tutorial compared to a static html is t
 The end user does not need to have R installed to run the code chunks. 
 
 
-### Exercise 1
+### Simple exercise
 
 Here's a simple exercise with an empty code chunk provided for entering the answer.
 
@@ -57,7 +60,7 @@ Here's a simple exercise with an empty code chunk provided for entering the answ
 ```  
   
   
-### Exercise 2  
+### Add a solution  
   
 We can add a hidden solution button to the exercise chunk.  
   
@@ -72,9 +75,8 @@ We can add a hidden solution button to the exercise chunk.
 ```
   
   
-### Exercise 3  
+### Add hints  
   
-
 We can give hints for code execution:  
   
 *Now calculate three two the power of five:*  
@@ -88,8 +90,7 @@ We can give hints for code execution:
 </div>  
   
   
-### Exercise 4  
-  
+### Mulitple hints   
   
 Note that we can add multiple hints and open them successively:  
   
@@ -119,13 +120,12 @@ c(1:2) + c(3:6)
 
 
 
-### Exercise 5  
+### Preset code 
   
-### Exercise with Hint
 
 We can already set up some code in the chunks as well, and the user just needs to finnish or modify it.  
 
-*Modify the following code to limit the number of rows printed to 5:*  
+*Modify the following code to limit the number of rows printed to 5 of the 'mtcars' data set:*  
 
 ```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
 mtcars
@@ -140,7 +140,26 @@ head(mtcars)
 ```{r print-limit-hint-2}
 # set the n argument to 5 to print only 5 rows
 head(mtcars, n = 5)
-```  
+``` 
+  
+  
+### Evaluating exercise  
+  
+Using the `gradethis` package, we can directly evaluate code entered in the code chunks.  
+  
+
+* Submit `1+1` to receive a correct grade.
+
+```{r addsimple, exercise = TRUE}
+
+```
+ 
+```{r addsimple-check}
+grade_result(
+  pass_if(~identical(.result, 2))
+)
+```
+
 
 
 ## Topic 2
